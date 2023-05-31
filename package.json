@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kilisoria/node_playroom/issues"
   },
-  "homepage": "https://github.com/kilisoria/node_playroom#readme"
+  "homepage": "https://github.com/kilisoria/node_playroom#readme",
+  "dependencies": {
+    "memory-cache": "^0.2.0"
+  }
 }
