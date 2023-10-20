@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/kilisoria/node_playroom#readme",
   "dependencies": {
+    "chalk": "^5.3.0",
     "memory-cache": "^0.2.0"
-  }
+  },
+  "type": "module"
 }

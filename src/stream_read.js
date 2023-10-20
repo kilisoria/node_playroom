@@ -1,7 +1,10 @@
-const fileSystem = require("fs");
+import fileSystem from "fs"
 
-const Stream = require('stream');
-const { Readable } = require('stream');
+import Stream from 'stream'
+
+import { Readable } from 'stream'
+
+import chalk from 'chalk';
 
 let data = "";
 
@@ -66,5 +69,5 @@ readableStream2.on('readable', function() {
 });
 
 readableStream2.on('end', function() {
-	console.log("\x1b[31m", `result for reading with pause mode: ${data2}`);
+	console.log(`${chalk.red("result for reading with pause mode:")} ${data2}`);
 });
