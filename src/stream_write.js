@@ -1,5 +1,6 @@
-const fileSystem = require("fs");
-var data = "Sample text";
+import fileSystem from "fs"
+
+const data = "Sample text";
 
 const writeStream = fileSystem.createWriteStream("output.txt");
 writeStream.write(data, "UTF8");
@@ -12,3 +13,5 @@ writeStream.on("finish", () => {
 writeStream.on("error", (error) => {
 	console.log(error.stack);
 });
+
+// 
