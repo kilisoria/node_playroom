@@ -1,3 +1,5 @@
+import chalk from "chalk";
+
 process.on('exit', code => {
     console.log('About to exit with code:', code);
 
@@ -5,8 +7,9 @@ process.on('exit', code => {
     console.log('PLATFORM', process.platform);
     console.log('PID', process.pid);
     console.log('TITLE', process.title);
-    console.log('CWD', process.cwd());
+    console.log(chalk.red('Current working Directory'), process.cwd());
     console.log('MEMORY', process.memoryUsage());
+    console.log(chalk.bgMagenta(`VARIABLE ENV ${process.env.SERVER}`))
 });
 
 process.on('beforeExit', code => {

@@ -13,5 +13,3 @@ writeStream.on("finish", () => {
 writeStream.on("error", (error) => {
 	console.log(error.stack);
 });
-
-// 

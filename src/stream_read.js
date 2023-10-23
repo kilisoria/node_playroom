@@ -62,12 +62,36 @@ var readableStream2 = fileSystem.createReadStream('test.txt');
 var data2 = '';
 var chunk;
 
-readableStream2.on('readable', function() {
-    while ((chunk=readableStream2.read()) != null) {
+readableStream2.on('readable', function (val) {
+	while ((chunk = readableStream2.read()) != null) {
         data2 += chunk;
     }
 });
 
 readableStream2.on('end', function() {
 	console.log(`${chalk.red("result for reading with pause mode:")} ${data2}`);
+});
+
+// EXAMPLE 04
+var readableStream3 = fileSystem.createReadStream('long-test.txt', { encoding: 'utf-8' });
+readableStream3.on('readable', function () {
+
+console.log(`${chalk.bgMagentaBright('example 04')}: ${readableStream3.read(6)}`)
+	while ((chunk = readableStream2.read()) != null) {
+		data2 += chunk;
+    }
+});
+
+// EXAMPLE 05
+const readableStream4 = fileSystem.createReadStream('test.txt', { encoding: "hex" });
+let data4 = '';
+
+readableStream4.on('readable', function () {
+	while ((chunk = readableStream4.read()) != null) {
+		data4 += chunk;
+    }
+});
+
+readableStream4.on('end', function() {
+	console.log(`${chalk.bgGreenBright("result for reading HEXA encoding:")} ${data4}`);
 });

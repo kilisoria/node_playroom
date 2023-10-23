@@ -16,5 +16,18 @@ Promise.all([
     fs.readFile('./input2.txt', { encoding: 'utf-8' })
 ]).then(([file1, file2]) => {
     console.log(`${chalk.greenBright("Async Parallel 1:")} ${file1}`)
-    console.log(`${chalk.greenBright("Async Parallel 2:")} ${file1}`)
+    console.log(`${chalk.greenBright("Async Parallel 2:")} ${file2}`)
 })
+
+// DIRECTORY
+try {
+    const dir = await fs.readdir('./')
+    
+    console.log(`${chalk.greenBright("Directory:")}`)
+    dir.forEach(d => {
+         console.log(`${chalk.green(d)}`)
+    })
+
+} catch (error) {
+    
+}
