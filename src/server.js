@@ -1,17 +1,16 @@
-const http = require('http');
-const fs = require('fs');
+import { createServer } from 'node:http';
+import { writeFile, readFile, unlink } from 'node:fs';
 
 
-const { add } = require('./utils/calculations');
+// const { add } = require('./utils/calculations');
 
 const DATA = "tomorrow is the semi-final";
 
 const hostname = "127.0.0.1";
 const port = 4444;
 
-const server = http.createServer((req, res) => {
-    // console.log(add(10, 20));
-    console.log('rrr', req.url);
+const server = createServer((req, res) => {
+    console.log('request URL', req.url);
 
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
@@ -19,7 +18,7 @@ const server = http.createServer((req, res) => {
     const url = req.url.replace('/', '');
     switch (url) {
         case 'file':
-            fs.writeFile('summary.txt', DATA, (err) => {
+            writeFile('summary.txt', DATA, (err) => {
                 if (err) {
                     throw err;
                 }
@@ -30,7 +29,7 @@ const server = http.createServer((req, res) => {
             break;
     
          case 'read':
-            fs.readFile('model.txt', (err, data) => {
+            readFile('model.txt', (err, data) => {
                 if (err) {
                     throw err;
                 }
@@ -40,7 +39,7 @@ const server = http.createServer((req, res) => {
             break;
         
         case 'file-delete':
-            fs.unlink('summary.txt', (err, data) => {
+            unlink('summary.txt', (err, data) => {
                 if (err) {
                     throw err;
                 }

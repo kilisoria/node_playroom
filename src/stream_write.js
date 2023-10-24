@@ -4,6 +4,11 @@ const data = "Sample text";
 
 const writeStream = fileSystem.createWriteStream("output.txt");
 writeStream.write(data, "UTF8");
+
+writeStream.on("drain", () => {
+	console.log("drain...");
+});
+
 writeStream.end()
 
 writeStream.on("finish", () => {
