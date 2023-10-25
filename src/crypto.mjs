@@ -1,4 +1,5 @@
 import { randomBytes, createCipheriv, createDecipheriv } from "crypto";
+import assert from 'node:assert'
 
 const CRYPTO_SECRET_KEY="vOVH6sdmpNWjRRIqCc7rdxs01lwHzfr3"
 const CRYPTO_ALGORITHM="aes-256-ctr"
@@ -34,5 +35,9 @@ const encrypt = string => {
     };
 }
 
-console.log(encrypt("developer"))
-console.log(decrypt({ iv: 'SpAWJ3maa9JF00ofMEkcBw==', content: 'aZkpgq4CdeMC' }))
+
+const text = 'developer';
+const encrypted = encrypt(text);
+
+console.log(`There any error?: ${!!assert.equal(decrypt(encrypted), text)}`)
+
