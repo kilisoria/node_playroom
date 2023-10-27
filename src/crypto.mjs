@@ -1,3 +1,11 @@
+/*
+
+https://www.openssl.org/
+https://www.arcserve.com/blog/5-common-encryption-algorithms-and-unbreakables-future
+
+
+*/
+
 import { randomBytes, createCipheriv, createDecipheriv } from "crypto";
 import assert from 'node:assert'
 
