@@ -14,7 +14,7 @@ const CRYPTO_ALGORITHM="aes-256-ctr"
 
 const decrypt = hash => {
     const decipher = createDecipheriv(
-        CRYPTO_ALGORITHM,
+        CRYPTO_ALGORITHM,   
         CRYPTO_SECRET_KEY,
         Buffer.from(hash.iv, 'base64')
     );
