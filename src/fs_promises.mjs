@@ -31,3 +31,14 @@ try {
 } catch (error) {
     
 }
+
+
+//  FILE
+await fs.appendFile('./input3.txt', "eyyyyyyy");
+
+await fs.open('./input4.txt', 'w');
+
+await fs.writeFile('./input4.txt', "absolut");
+
+await fs.writeFile('./input5.txt', "ccccccccccccccc");
+await fs.unlink('./input5.txt');
