@@ -40,5 +40,9 @@ await fs.open('./input4.txt', 'w');
 
 await fs.writeFile('./input4.txt', "absolut");
 
-await fs.writeFile('./input5.txt', "ccccccccccccccc");
-await fs.unlink('./input5.txt');
+await fs.writeFile('./inputXXX.txt', "vvv_ccc_ddd");
+await fs.unlink('./inputXXX.txt');
+
+await fs.writeFile('./input_R.txt', "vvv_ccc_ddd");
+await fs.rename('./input_R.txt', './input_RR.txt');
+await fs.unlink('./input_RR.txt');
